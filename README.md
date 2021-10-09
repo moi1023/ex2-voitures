@@ -61,7 +61,7 @@ Java possède plusieurs types de Collections dont les “Tableaux” et les “L
     voitures.add(v)
     
     // v est-il dans voitures?
-    bool hasVoiture = voitures.contains(v);
+    boolean hasVoiture = voitures.contains(v);
     
     // enlever v à voitures
     voitures.remove(v);
