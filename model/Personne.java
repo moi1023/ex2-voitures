@@ -14,14 +14,12 @@ public class Personne {
      * @param nom le nom de la personne
      */
     public Personne(String nom) {
-        /* a compléter */
-        throw new RuntimeException("Not implemented");
+        this.nom = nom;
     }
 
     /** @returns le nom de la personne */
     public String getNom() {
-        /* a compléter */
-        throw new RuntimeException("Not implemented");
+        return nom;
     }
 
     /**
@@ -31,8 +29,13 @@ public class Personne {
      * @param Voiture la voiture a ajouter.
      */
     public void ajouterVoiture(Voiture v) {
-        /* a compléter */
-        throw new RuntimeException("Not implemented");
+        if (!voitures.contains(v)) {
+            Personne p = v.getProprietaire();
+            if (p != null)
+                p.enleverVoiture(v);
+            voitures.add(v);
+            v.setProprietaire(this);
+        }
     }
 
     /**
@@ -43,8 +46,8 @@ public class Personne {
      * @param Voiture la voiture a enlever.
      */
     public void enleverVoiture(Voiture v) {
-        /* a compléter */
-        throw new RuntimeException("Not implemented");
+        voitures.remove(v);
+        v.setProprietaire(null);
     }
 
     /**
